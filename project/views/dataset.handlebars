@@ -1,0 +1,241 @@
+<html>
+    <head>
+    <style>
+        .b{
+            width:48%;
+        }
+        .a{
+            padding: 20px 10px;
+            border: 1px solid white;
+        }
+    </style>
+    </head>
+<body>
+    <div class="container-fluid ">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="has-dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By Dept/Ministry
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 1</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 2</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 3</label>
+                                </div>
+                            </li>
+                        </ul>
+                        </li>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="has-dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By State/Dept
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 1</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 2</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 3</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="has-dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By Sector
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 1</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 2</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 3</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <aside id="aside" class="col-md-3">
+                    <!-- Search -->
+                    <div class="widget">
+                        <div class="widget-search">
+                            <input class="search-input" type="text" placeholder="search">
+                            <button class="search-btn" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /Search -->
+                </aside>
+            </div>
+        </div>
+
+
+
+
+    <!-- Blog -->
+    <div id="blog">
+
+        <!-- Container -->
+        <div class="container-fluid">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Main -->
+                <div class="col-md-9">
+                    <!-- Service -->
+                    {{#each model}}
+                    <div class="col-sm-4 a">
+                        <div class="card" style="width:300px">
+                            <h5 class="card-title">{{title}}</h5>
+                            {{#if tyre}}
+                            <button type="button" class="btn btn-outline-success btn-sm">FREE</button><br>
+                            {{else}}
+                            <button type="button" class="btn btn-outline-danger btn-sm">PAID</button><br>
+                            {{/if}}
+                            <div id="myCarousel" class="carousel slide" data-ride="carousel">
+                                <!-- Indicators -->
+                                <ol class="carousel-indicators">
+                                    <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+                                    <li data-target="#myCarousel" data-slide-to="1"></li>
+                                    <li data-target="#myCarousel" data-slide-to="2"></li>
+                                </ol>
+
+                                <!-- Wrapper for slides -->
+                                <div class="carousel-inner">
+                                    <div class="item active">
+                                        <img src="images/json.png" alt="Los Angeles">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="images/csv.png" alt="Chicago">
+                                    </div>
+
+                                    <div class="item">
+                                        <img src="images/xml.png" alt="New York">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="card-body">
+                                <br>
+                                <a href="/dataset/visualize?sector={{sector}}&catalog={{catalog}}&dataset={{title}}" target="_blank"><button type="button" class="btn btn-outline-primary btn-block">Visual Access</button></a>
+                                <br>
+                                {{#if tyre}}
+                                <a href = "/download/json?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=json" ><button type="button" class="btn btn-outline-success b">JSON</button></a>
+                                <a href = "/download/csv?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=csv" ><button type="button" class="btn btn-outline-warning b">CSV</button></a>
+                                <a href = "/download/xml?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=xml" ><button type="button" class="btn btn-outline-danger b">XML</button></a>
+                                <a href = "/download/txt?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=txt" ><button type="button" class="btn btn-outline-primary b">XML</button></a>
+                                {{else}}
+                                <a href = "/payment?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=json&surveys={{surveys}}&sensitivity={{credibility}}" ><button type="button" class="btn btn-outline-success b">JSON</button></a>
+                                <a href = "/payment?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=csv&surveys={{surveys}}&sensitivity={{credibility}}" ><button type="button" class="btn btn-outline-warning b">CSV</button></a>
+                                <a href = "/payment?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=xml&surveys={{surveys}}&sensitivity={{credibility}}" ><button type="button" class="btn btn-outline-danger b">XML</button></a>
+                                <a href = "/payment?sector={{sector}}&catalog={{catalog}}&dataset={{title}}&type=txt&sensitivity={{credibility}}" ><button type="button" class="btn btn-outline-primary b">TXT</button></a>
+                                {{/if}}
+                            </div>
+                        </div>
+
+                    </div>
+                    {{/each}}
+                </div>
+
+                <!-- /Main -->
+
+
+                <!-- Aside -->
+                <aside id="aside" class="col-md-3">
+                    <!-- Category -->
+                    <div class="widget">
+                        <h3 class="title">Sectors</h3>
+                        <div class="widget-category">
+                            {{#each sectorlist}}
+                            <a href="/catalogs?sector={{sector}}" style="color: black; text-decoration: none;"><p>{{sector}}<span> ({{datasets}})</span></p></a>
+                            {{/each}}
+                        </div>
+                    </div>
+                    <!-- /Category -->
+                    <!-- Category -->
+                    <div class="widget">
+                        <h3 class="title">Recommended datasets</h3>
+                        <div class="widget-category">
+                            <a href="/datasets?catalog=Average%20Monthly%20Export%20and%20Import%20Transactions%20from%20Major%20Port" style="color: black; text-decoration: none;"><p>Average Monthly Export and Import Transactions from Major Port<span></span></p></a>
+                            <a href="/datasets?catalog=Commodity%20And%20Country%20Wise%20Imports%20In%20India" style="color: black; text-decoration: none;"><p>Commodity And Country Wise Imports In India<span></span></p></a>
+                        </div>
+                    </div>
+                    <!-- /Category -->
+
+                   
+
+                    <!-- Tags -->
+                    <div class="widget">
+                        <h3 class="title">Tags</h3>
+                        <div class="widget-tags">
+                            <a href="#">Major</a>
+                            <a href="#">Ports</a>
+                            <a href="#">Commodity</a>
+                            <a href="#">Country</a>
+                            <a href="#">Foreign</a>
+                            <a href="#">Equity</a>
+                            <a href="#">Commerce</a>
+                        </div>
+                    </div>
+                    <!-- /Tags -->
+
+                </aside>
+                <!-- /Aside -->
+
+            </div>
+            <!-- /Row -->
+            </div>
+       
+        <!-- /Container -->
+
+    </div>
+    <!-- /Blog -->
+   
+    
+</body>
+</html>
+
+

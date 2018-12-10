@@ -1,0 +1,113 @@
+                               Text Data Layout,,,,,,,,,
+                                       NSS 72nd Round (July 2014-June 2015),,,,,,,,,
+,,,,,,,,,
+,,,,Total no.of levels = 5,,,,,
+,Sch. 1.5 :    LEVEL - 01(Blocks 1 and 2),,,Record Length = 142+1,,,,,
+srl. no.,        Item,Schedule reference,,,Length,Byte position ,,,Remarks
+,,Block,Item,Col.,,,,,
+1,"Centre, Round",,,,3,1, -,3,Generated
+2,FSU Serial No.,1,1,,5,4, -,8,
+3,Round,1,2,,2,9, -,10," ""72"" Generated"
+4,Schedule,1,3,,3,11, -,13," ""015"" Generated"
+5,Sample,1,4,,1,14, -,14,"""1"" Generated"
+6,Sector,1,5,,1,15, -,15,
+7,NSS-Region,1,6,,3,16, -,18,
+8,District,1,7,,2,19, -,20,
+9,Stratum,1,8,,2,21, -,22,
+10,Sub-stratum,1,9,,2,23, -,24,
+11,Sub-Round,1,10,,1,25, -,25,
+12,Sub-sample,1,11,,1,26, -,26,
+13,FOD-Sub-Region,1,12,,4,27, -,30,
+14,Hamlet group/ Sub-block no.,1,13,,1,31, -,31,
+15,Second-stage-stratum no.,1,14,,1,32, -,32,
+16,Sample hhld. No.,1,15,,2,33, -,34,**Common-ID**
+17,Level ,,,,2,35, -,36," ""01"" Generated"
+18,Filler,,,,5,37, -,41," ""00000"" generated"
+19,Informant Sl.No.,1,16,,2,42, -,43,
+20,Response Code,1,17,,1,44, -,44,
+21,Survey Code,1,18,,1,45, -,45,
+22,Reason for substitution Code,1,19,,1,46, -,46,
+23,Employee code,2,"1(a),(ii)",3,4,47, -,50,
+24,Employee code,2,"1(a),(ii)",4,4,51, -,54,
+25,Employee code,2,"1(b),(ii)",3,4,55, -,58,
+26,Date of Survey,2,2(i),3,6,59, -,64,"""DD MM YY"""
+27,Date of Despatch,2,2(iv),4,6,65, -,70,"""DD MM YY"""
+28,Time to canvass (minutes),2,4,3,3,71, -,73,
+29,No. of investigators (FI/ ASO) in the team,2,5,3,1,74, -,74,
+30,Remarks in block 11/12,2,6(i),3,1,75, -,75,
+31,Remarks in block 11/12,2,6(i),4,1,76, -,76,
+32,Remarks elsewhere in Sch.,2,6(ii),3,1,77, -,77,
+33,Remarks elsewhere in Sch.,2,6(ii),4,1,78, -,78,
+34,Blank,,,,48,79, -,126,
+35,NSS,,,,3,127, -,129,
+36,NSC,,,,3,130, -,132,
+37,MLT,,,,10,133, -,142,
+,,,,,,,,,
+,Sch. 1.5 :    LEVEL - 02 (Block 3),,,,,,,,
+,,,,,,,,,
+srl. no.,        Item,Schedule reference,,,Length,Byte position ,,,Remarks
+,,Block,Item,Col.,,,,,
+1,Common-ID,,,,34,1, -,34,Auto-duplicated
+2,Level,,,,2,35, -,36," ""02"" Generated"
+3,Filler,,,,5,37, -,41,"""00000"" Generated"
+4,Household size,3,1,,2,42, -,43,
+5,NIC-2008 five digit code,3,2,,5,44, -,48,
+6,NCO-2004 three digit code,3,3,,3,49, -,51,
+7,Household type,3,4,,1,52, -,52,
+8,Religion,3,5,,1,53, -,53,
+9,Social group ,3,6,,1,54, -,54,
+10,Whether owns any non-agricultural enterprise,3,7,,1,55, -,55,
+11,Whether acquired any major durable goods,3,8,,1,56, -,56,
+12,Household usual monthly consumer expenditure (Rs.),3,9,,8,57, -,64,
+13,Blank,,,,62,65, -,126,
+14,NSS,,,,3,127, -,129,
+15,NSC,,,,3,130, -,132,
+16,MLT,,,,10,133, -,142,
+,,,,,,,,,
+,Sch. 1.5 :   LEVEL - 03 (Block 4),,,,,,,,
+,,,,,,,,,
+srl. no.,        Item,Schedule reference,,,Length,Byte position ,,,Remarks
+,,Block,Item,Col.,,,,,
+1,Common-ID,,,,34,1, -,34,Auto-duplicated
+2,Level,,,,2,35, -,36," ""03"" Generated"
+3,Filler,,,,3,37, -,39,"""000"" Generated"
+4,Person serial no.,4,All,1,2,40, -,41,
+5,Relation to head,4,All,3,1,42, -,42,
+6,Gender,4,All,4,1,43, -,43,
+7,Age,4,All,5,3,44, -,46,
+8,Blank,,,,80,47, -,126,
+9,NSS,,,,3,127, -,129,
+10,NSC,,,,3,130, -,132,
+11,MLT,,,,10,133, -,142,
+,,,,,,,,,
+,"Sch. 1.5 :   LEVEL - 04 (Block 5, 6, 7, 8, 9)",,,,,,,,
+,,,,,,,,,
+srl. no.,        Item,Schedule reference,,,Length,Byte position ,,,Remarks
+,,Block,Item,Col.,,,,,
+1,Common-ID,,,,34,1, -,34,Auto-duplicated
+2,Level,,,,2,35, -,36," ""04"" Generated"
+3,Filler,,,,2,37, -,38,"""00"" Generated"
+4,Item code,5/ 6/7/8/9,All,2,3,39, -,41,
+5,Expenditure (Rs.),5/ 6/7/8/9,All,3,8,42, -,49,
+6,Blank,,,,77,50, -,126,
+7,NSS,,,,3,127, -,129,
+8,NSC,,,,3,130, -,132,
+9,MLT,,,,10,133, -,142,
+,,,,,,,,,
+,Sch. 1.5 :   LEVEL - 05 (Block 10),,,,,,,,
+,,,,,,,,,
+srl. no.,        Item,Schedule reference,,,Length,Byte position ,,,Remarks
+,,Block,Item,Col.,,,,,
+1,Common-ID,,,,34,1, -,34,Auto-duplicated
+2,Level,,,,2,35, -,36," ""05"" Generated"
+3,Filler,,,,2,37, -,38,"""00"" Generated"
+4,Item code,10,All,2,3,39, -,41,
+5,No. purchased,10,All,3,3,42, -,44,
+6,Value (Rs.),10,All,4,8,45, -,52,
+7,Whether first hand purchase,10,All,5,1,53, -,53,
+8,Value (Rs.),10,All,6,8,54, -,61,
+9,Main use,10,All,7,1,62, -,62,
+10,Blank,,,,82,63, -,126,
+11,NSS,,,,3,127, -,129,
+12,NSC,,,,3,130, -,132,
+13,MLT,,,,10,133, -,142,

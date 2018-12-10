@@ -1,0 +1,148 @@
+<head>
+  <title>Bootstrap Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+ 
+<div class="row">
+            <div class="col-md-6">
+                <h1 class="text-center">Doughnut Chart</h1>
+                    <canvas id="myChart1" width="500" height="500" ></canvas>
+            </div>
+            <div class="col-md-6">
+                <h1 class="text-center">Pie Chart</h1>
+                    <canvas id="myChart2" width="500" height="500" ></canvas>
+            </div>
+            <br/><br/>
+            <div class="col-md-12">
+                <h1 class="text-center">Bar Graph</h1>
+                    <canvas id="myChart3" width="500" height="500" ></canvas>
+            </div>
+            </div>
+            
+</div>
+
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+
+
+<script>
+    $(document).ready(function(){
+            var fil;
+            $.ajax({
+            type: 'POST',
+            url: '/visualize',
+            async: false,
+            contentType: 'application/json',
+            success: function(data){
+                fil=data;
+                var lab=[];
+                var lab1;
+                var datas = [];
+                var color=[];
+                var dynamicColors = function() {
+                var r = Math.floor(Math.random() * 255);
+                var g = Math.floor(Math.random() * 255);
+                var b = Math.floor(Math.random() * 255);
+                return "rgb(" + r + "," + g + "," + b + ")";
+                };
+                var arr = [];
+                var fieldsss = [];
+                for(var i in fil.fields){
+                    if(isNaN(fil.data[0][i])){
+                        
+                        if(typeof parseInt(fil.data[0][i+1])=='number'){
+                            
+                            lab1=i;
+                            break;
+                        }
+                    }
+                
+                }
+
+                for(var i=parseInt(lab1)+1;i<fil.fields.length;i++){
+                    while(isNaN(fil.data[0][i])){
+                        i++;
+                    }
+                    for(var j in fil.data){
+                        
+                        arr.push(fil.data[j][i]);
+                    }
+                    
+                    datas.push(arr);
+                    arr = [];
+                    fieldsss.push(fil.fields[i]);
+                }
+                for(var j in fil.data){
+                    
+                    lab.push(fil.data[j][lab1]);
+                }
+
+                for(var j in fil.data){
+                    color.push(dynamicColors());
+                }
+
+                var CHART1 = document.getElementById('myChart1');
+                var mychart1 = new Chart(CHART1, {
+                    type: 'doughnut',
+                    data: {
+                        labels: lab,
+                        datasets: [{
+                            label: fil.fields[2].label,
+                            data: datas[0],
+                            backgroundColor: color,
+                        },
+                        ]
+                    }
+                    }
+                    );
+                    var CHART2 = document.getElementById('myChart2');
+                    var mychart2 = new Chart(CHART2, {
+                        type: 'pie',
+                        data: {
+                            labels: lab,
+                            datasets: [{
+                                label: fieldsss[0].label,
+                                data: datas[0],
+                                backgroundColor: color,
+                            },
+                            ]
+                        }
+                        }
+                            );
+                var dd = [];
+                for(z=0;z<datas.length;z++){
+                    
+                    var  d=  {
+                            label: fieldsss[z].label,
+                            data: datas[z],
+                            backgroundColor: color,
+                        }
+                    dd.push(d);
+                }
+                            var CHART3 = document.getElementById('myChart3');
+                var mychart3 = new Chart(CHART3, {
+                    type: 'bar',
+                    data: {
+                        labels: lab,
+                        datasets: dd
+                            
+                    }
+                    }
+                    );
+
+            }        
+        });
+        
+
+        
+    });
+  
+
+</script>
+</body>
+</html>

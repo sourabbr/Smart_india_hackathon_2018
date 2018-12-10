@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+
+	<title>SIH</title>
+
+	<!-- Google font -->
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700%7CVarela+Round" rel="stylesheet">
+
+	<!-- Bootstrap -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	<link type="text/css" rel="stylesheet" href="css/bootstrap.min.css" />
+
+	<!-- Owl Carousel -->
+	<link type="text/css" rel="stylesheet" href="css/owl.carousel.css" />
+	<link type="text/css" rel="stylesheet" href="css/owl.theme.default.css" />
+
+	<!-- Magnific Popup -->
+	<link type="text/css" rel="stylesheet" href="css/magnific-popup.css" />
+
+	<!-- Font Awesome Icon -->
+	<link rel="stylesheet" href="css/font-awesome.min.css">
+
+	<!-- Custom stlylesheet -->
+	<link type="text/css" rel="stylesheet" href="css/style.css" />
+
+	<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+	<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+	<!--[if lt IE 9]>
+		<script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+		<script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,600&amp;subset=latin-ext" rel="stylesheet">
+
+    <!-- CSS -->
+    <link href="css/main.css" rel="stylesheet">
+
+    <!-- JS -->
+    <script src="js/vendor/modernizr-2.8.3.min.js"></script>
+    <script src="js/vendor/jquery-1.12.0.min.js"></script>
+	<style>
+		li#user-display-name{
+            margin-top: 3%;
+        }
+	</style>
+</head>
+
+<body>
+	<!-- Header -->
+	<header id="home">
+
+		<!-- Nav -->
+		<nav id="nav" class="navbar nav-transparent">
+			<div class="container">
+
+				<div class="navbar-header">
+					<!-- Logo -->
+					<div class="navbar-brand">
+						<a href="#home">
+							<img class="logo" src="./images/l.jpg" alt="ddp">
+                            <img class="logo-alt" src="./images/l2.png" alt="ddp">
+						</a>
+					</div>
+					<!-- /Logo -->
+
+					<!-- Collapse nav button -->
+					<div class="nav-collapse">
+						<span></span>
+					</div>
+					<!-- /Collapse nav button -->
+				</div>
+
+				<!--  Main navigation  -->
+				<ul class="main-nav nav navbar-nav navbar-right">
+					<input type="hidden" class="form-control" id="usertypego" name="usertypego" value={{user.usertype}}>
+					<li id="officerlink"><a class="navbar-brand" href="/officer">Officer</a></li>
+					{{#if user}}
+						<li id="user-display-name">Welcome {{user.firstname}}</li>
+						<li role="presentation"><a href="/sector">Sectors</a></li>
+						<li role="presentation"><a href="#">Researcher</a></li>
+						<li role="presentation"><a href="/users/logout">Logout</a></li>
+					{{else}}
+                        <li><a href="#home">Home</a></li>
+						<li><a href="#about">About</a></li>
+						<li><a href="#portfolio">Sectors</a></li>
+						<li><a href="#service">Services</a></li>
+						<li><a href="#contact">Contact</a></li>
+						<li role="presentation"><a href="/users/login">Login</a></li>
+						<li role="presentation"><a href="/users/register">Register</a></li>
+                    {{/if}}
+				</ul>
+				<!-- /Main navigation -->
+
+			</div>
+		</nav>
+		<!-- /Nav -->
+    <!-- home wrapper -->
+	<div class="home-wrapper">
+			<section class="hero-section hero-section--image clearfix clip">
+					<div class="hero-section__wrap"> 
+						<div class="hero-section__option">
+							<div class="overlay">
+									<img src="images/background1.jpg" alt="Hero section image" >
+							</div>
+						</div>
+						<!-- .hero-section__option -->
+	
+						<div class="container">
+							<div class="row">
+								<div class="col-md-10 col-md-offset-1">
+									<div class="home-content" >
+										<h1 class="white-text">Data Dissemination Platform</h1>
+										<br>    
+										<h2>
+										<strong class="hero-section__words">
+											<span class="title__effect is-visible">Storing</span>
+											<span class="title__effect">Accessing</span>
+											<span class="title__effect">Visualizing</span>
+											<span class="title__effect">Costing</span>
+										</strong>
+										</h2>
+										<br>
+										<button class="white-btn">Sectors</button>
+										<button class="main-btn">Catalogs</button>
+									</div> <!-- .title-01 -->
+								</div>
+							</div>
+						</div>
+					</div>
+				</section>
+	</div>
+	<!-- /home wrapper -->
+	</header>
+	<!-- /Header -->
+
+	
+	
+	
+	<!-- About -->
+	<div id="about" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Welcome to the Portal</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- about -->
+				<div class="col-md-4">
+					<div class="about">
+						<i class="fa fa-smile-o"></i>
+						<h3>Easy of access</h3>
+						<p>Can be accesed very easily by any user</p>
+					</div>
+				</div>
+				<!-- /about -->
+
+				<!-- about -->
+				<div class="col-md-4">
+					<div class="about">
+						<i class="fa fa-magic"></i>
+						<h3>Awesome Features</h3>
+						<p>Downloading data in various types of formats. Uploading option provided to key holders</p>
+					</div>
+				</div>
+				<!-- /about -->
+
+				<!-- about -->
+				<div class="col-md-4">
+					<div class="about">
+						<i class="fa fa-bitcoin"></i>
+						<h3>Dynamic Costing</h3>
+						<p>Cost of data based on volume and complexity</p>
+					</div>
+				</div>
+				<!-- /about -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /About -->
+
+
+	<!-- Portfolio -->
+	<div id="portfolio" class="section md-padding bg-grey">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section header -->
+				<div class="section-header text-center">
+					<h2 class="title">Sectors</h2>
+				</div>
+				<!-- /Section header -->
+
+				<!-- Work -->
+				<div class="col-md-4 col-xs-6 work">
+					<img class="img" src="./images/agribw.jpg" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Category</span>
+						<h3>Agriculture</h3>
+						<div class="work-link">
+							<a href="#"><i class="fa fa-external-link"></i></a>
+							<a class="lightbox" href="./images/agribw.jpg"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+				<!-- Work -->
+				<div class="col-md-4 col-xs-6 work">
+					<img class="img" src="./images/animal-husbandry.jpg" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Category</span>
+						<h3>Animal Husbandary</h3>
+						<div class="work-link">
+							<a href="#"><i class="fa fa-external-link"></i></a>
+							<a class="lightbox" href="./images/animal-husbandry.jpg"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+				<!-- Work -->
+				<div class="col-md-4 col-xs-6 work">
+					<img class="img" src="./images/biotech.jpeg" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Category</span>
+						<h3>Biotechnology</h3>
+						<div class="work-link">
+							<a href="#"><i class="fa fa-external-link"></i></a>
+							<a class="lightbox" href="./images/biotech.jpeg"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+				<!-- Work -->
+				<div class="col-md-4 col-xs-6 work">
+					<img class="img" src="./images/commerce-image.jpg" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Category</span>
+						<h3>Commerce</h3>
+						<div class="work-link">
+							<a href="#"><i class="fa fa-external-link"></i></a>
+							<a class="lightbox" href="./images/commerce-image.jpg"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+				<!-- Work -->
+				<div class="col-md-4 col-xs-6 work">
+					<img class="img" src="./images/mining.jpg" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Category</span>
+						<h3>Mining</h3>
+						<div class="work-link">
+							<a href="#"><i class="fa fa-external-link"></i></a>
+							<a class="lightbox" href="./images/mining.jpg"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+				<!-- Work -->
+				<div class="col-md-4 col-xs-6 work">
+					<img class="img" src="./images/Statistics.jpg" alt="">
+					<div class="overlay"></div>
+					<div class="work-content">
+						<span>Category</span>
+						<h3>Statistics</h3>
+						<div class="work-link">
+							<a href="#"><i class="fa fa-external-link"></i></a>
+							<a class="lightbox" href="./images/Statistics.jpg"><i class="fa fa-search"></i></a>
+						</div>
+					</div>
+				</div>
+				<!-- /Work -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Portfolio -->
+
+	<!-- Service -->
+    <div id="service" class="section md-padding">
+
+        <!-- Container -->
+        <div class="container">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Section header -->
+                <div class="section-header text-center">
+                    <h2 class="title">What we offer</h2>
+                </div>
+                <!-- /Section header -->
+
+                <!-- service -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service">
+                        <i class="fa fa-diamond"></i>
+                        <h3>Access Portal</h3>
+                        <p>Users and officers are provided with the ability to explore data</p>
+                    </div>
+                </div>
+                <!-- /service -->
+
+                <!-- service -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service">
+                        <i class="fa fa-rocket"></i>
+                        <h3>Admin Portal</h3>
+                        <p>A special portal provided for uploading datasets</p>
+                    </div>
+                </div>
+                <!-- /service -->
+
+                <!-- service -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service">
+                        <i class="fa fa-cogs"></i>
+                        <h3>Creative Idea</h3>
+                        <p>Using machine learning algorithms to compile the cost of accessing data</p>
+                    </div>
+                </div>
+                <!-- /service -->
+
+                <!-- service -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service">
+                        <i class="fa fa-diamond"></i>
+                        <h3>Interactive Interface</h3>
+                        <p>Dynamic and user friendly environment </p>
+                    </div>
+                </div>
+                <!-- /service -->
+
+                <!-- service -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service">
+                        <i class="fa fa-pencil"></i>
+                        <h3>Cloud based storage</h3>
+                        <p>Amazon Web Services S3 cloud used to store data</p>
+                    </div>
+                </div>
+                <!-- /service -->
+
+                <!-- service -->
+                <div class="col-md-4 col-sm-6">
+                    <div class="service">
+                        <i class="fa fa-flask"></i>
+                        <h3>Effective storage</h3>
+                        <p>Any uploaded dataset is converted and stored as a json file and rendered in the required formats</p>
+                    </div>
+                </div>
+                <!-- /service -->
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Service -->
+
+
+	{{!-- <!-- Why Choose Us -->
+	<div id="features" class="section md-padding bg-grey">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- why choose us content -->
+				<div class="col-md-6">
+					<div class="section-header">
+						<h2 class="title">Why Choose Us</h2>
+					</div>
+					<p>This portal is created for online Dissemination of data provided by the Government/Ministries.</p>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Ouick and Easy access.</p>
+					</div>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Various Formats</p>
+					</div>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Payment Portal</p>
+					</div>
+					<div class="feature">
+						<i class="fa fa-check"></i>
+						<p>Dynamic Costing</p>
+					</div>
+				</div>
+				<!-- /why choose us content -->
+
+				<!-- About slider -->
+				<div class="col-md-6">
+					<div id="about-slider" class="owl-carousel owl-theme">
+						<img class="img-responsive" src="./images/about1.jpg" alt="">
+						<img class="img-responsive" src="./images/about2.jpg" alt="">
+						<img class="img-responsive" src="./images/about1.jpg" alt="">
+						<img class="img-responsive" src="./images/about2.jpg" alt="">
+					</div>
+				</div>
+				<!-- /About slider -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Why Choose Us --> --}}
+
+	<!-- Contact -->
+	<div id="contact" class="section md-padding">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<!-- Section-header -->
+				<div class="section-header text-center">
+					<h2 class="title">Get in touch</h2>
+				</div>
+				<!-- /Section-header -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-phone"></i>
+						<h3>Phone</h3>
+						<p>512-421-3940</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-envelope"></i>
+						<h3>Email</h3>
+						<p>email@support.com</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact -->
+				<div class="col-sm-4">
+					<div class="contact">
+						<i class="fa fa-map-marker"></i>
+						<h3>Address</h3>
+						<p>1739 Bubby Drive</p>
+					</div>
+				</div>
+				<!-- /contact -->
+
+				<!-- contact form -->
+				<div class="col-md-8 col-md-offset-2">
+					<form class="contact-form">
+						<input type="text" class="input" placeholder="Name">
+						<input type="email" class="input" placeholder="Email">
+						<input type="text" class="input" placeholder="Subject">
+						<textarea class="input" placeholder="Message"></textarea>
+						<button class="main-btn">Send message</button>
+					</form>
+				</div>
+				<!-- /contact form -->
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</div>
+	<!-- /Contact -->
+
+
+	<!-- Footer -->
+	<footer id="footer" class="sm-padding bg-dark">
+
+		<!-- Container -->
+		<div class="container">
+
+			<!-- Row -->
+			<div class="row">
+
+				<div class="col-md-12">
+
+					<!-- footer logo -->
+					<div class="footer-logo">
+						<a href="#home"><img src="images/l2.png" alt="logo"></a>
+					</div>
+					<!-- /footer logo -->
+
+					<!-- footer follow -->
+					<ul class="footer-follow">
+						<li><a href="#"><i class="fa fa-facebook"></i></a></li>
+						<li><a href="#"><i class="fa fa-twitter"></i></a></li>
+						<li><a href="#"><i class="fa fa-google-plus"></i></a></li>
+						<li><a href="#"><i class="fa fa-instagram"></i></a></li>
+						<li><a href="#"><i class="fa fa-linkedin"></i></a></li>
+						<li><a href="#"><i class="fa fa-youtube"></i></a></li>
+					</ul>
+					<!-- /footer follow -->
+
+					<!-- footer copyright -->
+					<div class="footer-copyright">
+						<p>Copyright © 2018. All Rights Reserved. Designed by Negatives.</p>
+					</div>
+					<!-- /footer copyright -->
+
+				</div>
+
+			</div>
+			<!-- /Row -->
+
+		</div>
+		<!-- /Container -->
+
+	</footer>
+	<!-- /Footer -->
+
+	<!-- Back to top -->
+	<div id="back-to-top"></div>
+	<!-- /Back to top -->
+
+	<!-- Preloader -->
+	<div id="preloader">
+		<div class="preloader">
+			<span></span>
+			<span></span>
+			<span></span>
+			<span></span>
+		</div>
+	</div>
+	<!-- /Preloader -->
+
+	<!-- jQuery Plugins -->
+	<script type="text/javascript" src="js/jquery.min.js"></script>
+	<script type="text/javascript" src="js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+	<script type="text/javascript" src="js/jquery.magnific-popup.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script src="js/plugins/animate-headline.js"></script>
+	<div id="google_translate_element"></div><script type="text/javascript">
+function googleTranslateElementInit() {
+  new google.translate.TranslateElement({pageLanguage: 'en', includedLanguages: 'bn,en,gu,hi,kn,mr,ne,pa,ta,te', layout: google.translate.TranslateElement.InlineLayout.SIMPLE}, 'google_translate_element');
+}
+</script>
+<script>
+    $(document).ready(function(){
+        if(document.getElementById('usertypego').value=="officer"){
+            $('#officerlink').show();
+        }
+    });
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+
+</html>

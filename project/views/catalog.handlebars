@@ -1,0 +1,141 @@
+<head>
+    <style>
+        .pricing{
+          height:250px;
+        }
+    </style>
+    
+</head>
+<body>
+
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-sm-3">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By Dept/Ministry
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 1</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 2</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 3</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By State/Dept
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 1</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 2</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 3</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-sm-3">
+            <div class="dropdown">
+                <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By Sector
+                    <span class="caret"></span>
+                </button>
+                <ul class="dropdown-menu">
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 1</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 2</label>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="checkbox">
+                            <label>
+                                <input type="checkbox" value="">Option 3</label>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<br>
+
+ <!-- Container -->
+    <div class="container-fluid">
+
+        <!-- Row -->
+        <div class="row content">
+
+            <!-- Section header -->
+            <div class="section-header text-center">
+                <h2 class="title">Catalogs</h2>
+            </div>
+            <!-- /Section header -->
+            <!-- pricing -->
+            {{#each model}}
+            <div class="col-sm-3 cat">
+                <div class="pricing">
+                    <div class="price-head">
+                       <br> <h4><strong>{{title}}</strong></h4>
+                    </div>
+                    <div class="col-lg-12">
+                        <p>{{sector}}</p>
+                    </div>
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <p>Datasets
+                                <span>({{datasets}})</span>
+                            </p>
+                        </div>
+                    </div>
+                    <div class="price-btn">
+                            <a href="/datasets?catalog={{title}}" style="color: black; text-decoration: none;"><button class="btn btn-outline-success">Access Data</button></a>
+                    </div>
+
+                </div>
+            </div>
+            {{/each}}
+            <!-- /pricing -->
+        </div>
+        <!-- Row -->
+
+    </div>
+    <!-- /Container -->
+
+
+</body>

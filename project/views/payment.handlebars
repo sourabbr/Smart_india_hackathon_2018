@@ -1,0 +1,108 @@
+<body>
+<div id="jsoncostform">
+    <div class="container">
+    <form method="POST" action="/pay">
+        <br><br>
+        <h3>PAYMENT</h3>
+        <div class="row">
+        <div class="col-lg-5">
+        <p>Volume : 434.4kB</p>
+        </div>
+        <div class="col-lg-5">
+        <p>NSS costing applied..</p>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="username" name="username" value={{user.username}}>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="type" name="type" value={{type}}>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="sector" name="surveys" value={{sector}}>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="surveys" name="catalog" value={{catalog}}>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="dataset" name="dataset" value={{dataset}}>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="sen" name="sen" value={{sensitivity}}>
+        </div>
+        <div class="form-group">
+            <input type="text" class="form-control" id="rows" placeholder="Enter number of rows required" name="rows" required>
+        </div>
+        <div class="form-group">
+            <label for="nationality">Nationality:</label>
+            <label class="radio-inline"><input type="radio" name="nationality" id="indian" value="1" checked>Indian users</label>
+            <label class="radio-inline"><input type="radio" name="nationality" id="nri" value="1.5">Foreign users</label>
+        </div>
+        <div class="form-group">
+            <label for="purpose">Purpose:</label>
+            <label class="radio-inline"><input type="radio" name="purpose" id="academic" value="1" checked>Academic</label>
+            <label class="radio-inline"><input type="radio" name="purpose" id="industrial" value="1.5">Industrial</label>
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="amount" name="amount">
+        </div>
+        <div class="form-group">
+            <input type="hidden" class="form-control" id="downloadurl" name="downloadurl" value="/download?sector={{sector}}&catalog={{catalog}}&dataset={{dataset}}&type={{type}}">
+        </div>
+        <div class="form-group checkbox">
+            <label><input type="checkbox" name="T&C" id="T&C" value="T&C" required><a href="/TandC" target="_blank">I accept the terms and conditions</a></label>
+        </div>
+        <div class="form-group col-lg-2">
+            <button type="button" class="btn btn-default" name="cost" id="cost" onclick="computeCost()">Compute cost</button>
+        </div>
+        <div class="col-lg-2 col-offset-2">
+            <h4>₹<span id="price"></span></h4>
+        </div>
+        <div class="form-group">
+            <button type="submit" class="btn btn-default" name="pay" id="pay">Pay</button>
+        </div>
+        
+        </div>
+    </form>
+    </div>
+
+</div>
+
+
+<script>
+        $(document).ready(function(){
+            $('#pay').click(function(){
+                alert("Once payment is completed, data is disseminated to the registered email id!");
+            });
+        });
+
+        function computeCost() {
+        var indian_or_not;
+        var academic_or_industrial;
+        var sen_score = document.getElementById("sen").value * 10;
+        console.log(sen_score);
+        var no_rows = document.getElementById("rows").value * 0.25;
+        console.log(no_rows);
+        var nationality = document.getElementsByName("nationality");
+        console.log(nationality);
+        for (var i = 0; i < nationality.length; i++) {
+            if (nationality[i].checked)
+                indian_or_not = nationality[i].value;
+        }
+        console.log(indian_or_not);
+        var purpose = document.getElementsByName("purpose");
+        for (var i = 0; i < purpose.length; i++) {
+            if (purpose[i].checked)
+                academic_or_industrial = purpose[i].value;
+        }
+        console.log(academic_or_industrial);
+        indian_or_not = indian_or_not * 1.2;
+        academic_or_industrial = academic_or_industrial * 1.4;
+        var cost = sen_score * no_rows * indian_or_not * academic_or_industrial;
+        console.log(cost);
+        document.getElementById("price").innerHTML = cost;
+        document.getElementById("amount").value = cost;
+        }
+        
+    </script> 
+
+</body>

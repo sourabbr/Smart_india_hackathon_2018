@@ -1,0 +1,147 @@
+
+<div class="container-fluid">
+            <div class="row">
+                <div class="col-sm-3">
+                    <div class="has-dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By Dept/Ministry
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 1</label>
+                                </div>
+                            </li>
+
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 2</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 3</label>
+                                </div>
+                            </li>
+                        </ul>
+                        </li>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="has-dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By State/Dept
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 1</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 2</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 3</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="has-dropdown">
+                        <button class="btn btn-primary dropdown-toggle btn-block" type="button" data-toggle="dropdown">Filter By Sector
+                            <span class="caret"></span>
+                        </button>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 1</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 2</label>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="checkbox">
+                                    <label>
+                                        <input type="checkbox" value="">Option 3</label>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <aside id="aside" class="col-md-3">
+                    <!-- Search -->
+                    <div class="widget">
+                        <div class="widget-search">
+                            <input class="search-input" type="text" placeholder="search">
+                            <button class="search-btn" type="button">
+                                <i class="fa fa-search"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <!-- /Search -->
+                </aside>
+            </div>
+        </div>
+
+<!-- Blog -->
+    <div id="blog">
+
+        <!-- Container -->
+        <div class="container-fluid">
+
+            <!-- Row -->
+            <div class="row">
+
+                <!-- Main -->
+                <main id="main" class="col-md-12">
+                    <!-- Service -->
+                    <div id="service">
+
+                        <!-- Section header -->
+                        <div class="section-header text-center">
+                            <h2 class="title">Sectors</h2>
+                        </div>
+                        <!-- /Section header -->
+
+                        <!-- service -->
+                        {{#each model}}
+                        <div class="col-md-4 col-sm-6">
+                            <div class="service">
+                                <a href="/catalogs?sector={{sector}}" style="color: black; text-decoration: none;"><h3 class="text-center">{{sector}}</h3></a>
+                                <p>Catalogs : {{catalog}}</p>
+                                <p>Data Sets : {{datasets}}</p>
+                            </div>
+                        </div>
+                        {{/each}}
+                        <!-- /service -->
+                        
+                    </div>
+                    <!-- /Service -->
+
+                </main>
+                <!-- /Main -->
+
+            </div>
+            <!-- /Row -->
+
+        </div>
+        <!-- /Container -->
+
+    </div>
+    <!-- /Blog -->
